@@ -148,5 +148,4 @@ class PetController {
 		this.owners.save(owner);
 		return "redirect:/owners/{ownerId}";
 	}
-
 }
