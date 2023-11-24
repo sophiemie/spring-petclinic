@@ -23,6 +23,10 @@
         <td th:text="*{city}"></td>
       </tr>
       <tr>
+        <th>Zip Code</th>
+        <td th:text="*{zipCode}"></td>
+      </tr>
+      <tr>
         <th>Telephone</th>
         <td th:text="*{telephone}"></td>
       </tr>
@@ -30,6 +34,12 @@
   
     <a th:href="@{__${owner.id}__/edit}" class="btn btn-primary">Edit
       Owner</a>
+    <a th:href="@{__${owner.id}__/delete}" class="btn btn-primary" th:method="delete">Delete
+      Owner</a>
+
+
+
+
     <a th:href="@{__${owner.id}__/pets/new}" class="btn btn-primary">Add
       New Pet</a>
   

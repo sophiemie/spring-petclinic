@@ -39,6 +39,7 @@ CREATE TABLE owners (
   last_name  VARCHAR_IGNORECASE(30),
   address    VARCHAR(255),
   city       VARCHAR(80),
+  zip_code   VARCHAR(10),
   telephone  VARCHAR(20)
 );
 CREATE INDEX owners_last_name ON owners (last_name);
@@ -50,7 +51,7 @@ CREATE TABLE pets (
   type_id    INTEGER NOT NULL,
   owner_id   INTEGER
 );
-ALTER TABLE pets ADD CONSTRAINT fk_pets_owners FOREIGN KEY (owner_id) REFERENCES owners (id);
+ALTER TABLE pets ADD CONSTRAINT fk_pets_owners FOREIGN KEY (owner_id) REFERENCES owners (id) ON DELETE CASCADE;
 ALTER TABLE pets ADD CONSTRAINT fk_pets_types FOREIGN KEY (type_id) REFERENCES types (id);
 CREATE INDEX pets_name ON pets (name);
 
